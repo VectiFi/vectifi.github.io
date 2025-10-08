@@ -90,9 +90,9 @@ export function EmailForm() {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center gap-4 p-8">
-        <CheckCircle2 className="w-12 h-12 text-green-400" />
-        <p className="text-center text-white">
+      <div className="flex flex-col items-center gap-3 sm:gap-4 p-4 sm:p-6 md:p-8">
+        <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-green-400" />
+        <p className="text-center text-white text-sm sm:text-base px-2">
           Thank you for your interest! We'll be in touch soon.
         </p>
       </div>
@@ -113,16 +113,16 @@ export function EmailForm() {
                 setEmail(e.target.value);
                 setError(''); // Clear error when user types
               }}
-              className="pl-9 h-10 bg-white w-full"
+              className="pl-9 h-10 sm:h-11 bg-white w-full text-sm sm:text-base"
             />
           </div>
         </div>
-        <Button type="submit" className="h-10 px-6 whitespace-nowrap w-full md:w-auto" disabled={isSubmitting}>
+        <Button type="submit" className="h-10 sm:h-11 px-4 sm:px-6 whitespace-nowrap w-full md:w-auto text-sm sm:text-base" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Request Information'}
         </Button>
       </div>
       {error && (
-        <p className="text-sm text-red-500">{error}</p>
+        <p className="text-xs sm:text-sm text-red-400 text-center px-2">{error}</p>
       )}
     </form>
   );
