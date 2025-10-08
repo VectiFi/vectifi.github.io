@@ -101,8 +101,8 @@ export function EmailForm() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full space-y-3">
-      <div className="flex flex-col md:flex-row gap-3 items-start justify-center">
-        <div className="w-full md:w-80 space-y-2">
+      <div className="flex flex-row gap-2 items-start justify-center">
+        <div className="w-80 space-y-2">
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
@@ -117,8 +117,8 @@ export function EmailForm() {
             />
           </div>
         </div>
-        <Button type="submit" className="h-10 sm:h-11 px-4 sm:px-6 whitespace-nowrap w-full md:w-auto text-sm sm:text-base" disabled={isSubmitting}>
-          {isSubmitting ? 'Submitting...' : 'Request Information'}
+        <Button type="submit" className="h-10 sm:h-11 px-4 sm:px-6 whitespace-nowrap text-sm sm:text-base flex-shrink-0" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Request'}
         </Button>
       </div>
       {error && (
