@@ -101,8 +101,8 @@ export function EmailForm() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full space-y-3">
-      <div className="w-full flex flex-row gap-2 items-start max-w-2xl mx-auto">
-        <div className="flex-1">
+      <div className="w-full flex flex-row gap-2 items-start mx-auto" style={{ maxWidth: '400px' }}>
+        <div style={{ flex: 1 }}>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
