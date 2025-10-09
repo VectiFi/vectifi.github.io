@@ -29,7 +29,7 @@ export default function App() {
 
       {/* Email Collection Section - Deep Dark Blue Background */}
       <section className="bg-[#001a3d] py-12 sm:py-16 md:py-20">
-        <div className="px-4 sm:px-6">
+        <div>
           <div className="space-y-6 sm:space-y-8">
             <h2 className="text-white text-center text-base sm:text-lg md:text-xl font-bold px-2 leading-relaxed">
               Learn More and A Chance to Join Exclusive Beta Launch
