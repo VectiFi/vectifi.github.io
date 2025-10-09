@@ -12,17 +12,17 @@ export default function App() {
           </h1>
 
           {/* Slogan - Below Logo, No Background */}
-          <p className="text-sm text-muted-foreground uppercase mb-16">The best analyst on your team</p>
+          <p className="text-sm md:text-xl text-muted-foreground uppercase mb-16">The best analyst on your team</p>
 
           {/* Main Headline - Smaller */}
-          <p className="text-lg md:text-3xl text-muted-foreground max-w-5xl mx-auto px-4 mb-16 leading-relaxed">
+          <p className="text-lg md:text-3xl text-muted-foreground max-w-6xl mx-auto px-4 mb-16 leading-relaxed md:whitespace-nowrap">
             AI-native FP&A platform empowering smarter business decisions
           </p>
 
           {/* Launch Status */}
           <div className="flex items-center justify-center gap-2 text-muted-foreground">
             <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-            <p className="text-sm uppercase">Product launching soon</p>
+            <p className="text-sm md:text-xl uppercase">Product launching soon</p>
           </div>
         </div>
       </section>
