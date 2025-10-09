@@ -21,7 +21,7 @@ const PERSONAL_EMAIL_DOMAINS = [
 ];
 
 // Replace this with your actual email address where you want to receive notifications
-const NOTIFY_EMAIL = 'ireneyzpan@gmail.com';
+const NOTIFY_EMAIL = 'boyangcs@gmail.com';
 
 export function EmailForm() {
   const [email, setEmail] = useState('');
