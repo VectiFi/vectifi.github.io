@@ -12,25 +12,25 @@ export default function App() {
           </h1>
 
           {/* Slogan - Below Logo, No Background */}
-          <p className="text-sm md:text-xl text-muted-foreground uppercase mb-16">The best analyst on your team</p>
+          <p className="text-xs md:text-sm text-muted-foreground uppercase mb-16">The best analyst on your team</p>
 
           {/* Main Headline - Smaller */}
-          <p className="text-lg md:text-3xl text-muted-foreground max-w-6xl mx-auto px-4 mb-16 leading-relaxed md:whitespace-nowrap">
-            AI-native FP&A platform empowering smarter business decisions
+          <p className="text-lg md:text-3xl text-muted-foreground max-w-6xl mx-auto px-4 mb-16 leading-relaxed">
+            AI-native FP&A platform empowering <span className="whitespace-nowrap">smarter business decisions</span>
           </p>
 
           {/* Launch Status */}
           <div className="flex items-center justify-center gap-2 text-muted-foreground">
             <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-            <p className="text-sm md:text-xl uppercase">Product launching soon</p>
+            <p className="text-xs md:text-sm uppercase">Product launching soon</p>
           </div>
         </div>
       </section>
 
       {/* Email Collection Section - Deep Dark Blue Background */}
-      <section className="bg-[#001a3d] py-12 sm:py-16 md:py-20">
+      <section className="bg-[#001a3d] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             <h2 className="text-white text-center text-base sm:text-lg md:text-xl font-bold px-2 leading-relaxed">
               Learn More and A Chance to Join Exclusive Beta Launch
             </h2>
@@ -46,9 +46,6 @@ export default function App() {
         <div className="container mx-auto px-4 sm:px-6 py-8">
           <div className="flex flex-col items-center justify-center gap-2 text-center">
             <p className="text-xs sm:text-sm text-muted-foreground">© 2025 VectiFi. All rights reserved.</p>
-            <p className="text-xs sm:text-sm text-muted-foreground">
-              Empowering finance teams with AI
-            </p>
           </div>
         </div>
       </footer>
