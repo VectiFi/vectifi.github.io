@@ -12,7 +12,7 @@ export default function App() {
           </h1>
 
           {/* Slogan - Below Logo, No Background */}
-          <p className="text-xs md:text-sm text-muted-foreground uppercase mb-16">The best analyst on your team</p>
+          <p className="text-xs md:text-sm text-muted-foreground uppercase mb-16">The best financial analyst on your team</p>
 
           {/* Main Headline - Smaller */}
           <p className="text-lg md:text-3xl text-muted-foreground max-w-6xl mx-auto px-4 mb-16 leading-relaxed">
