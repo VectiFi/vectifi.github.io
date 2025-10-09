@@ -20,9 +20,6 @@ const PERSONAL_EMAIL_DOMAINS = [
   'zoho.com',
 ];
 
-// Replace this with your actual email address where you want to receive notifications
-const NOTIFY_EMAIL = 'boyangcs@gmail.com';
-
 export function EmailForm() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -62,8 +59,7 @@ export function EmailForm() {
             'Authorization': `Bearer ${publicAnonKey}`,
           },
           body: JSON.stringify({ 
-            email,
-            notifyEmail: NOTIFY_EMAIL 
+            email
           }),
         }
       );

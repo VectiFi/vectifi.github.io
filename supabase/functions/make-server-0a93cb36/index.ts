@@ -27,7 +27,7 @@ app.get("/make-server-0a93cb36/health", (c) => {
 // Email notification endpoint
 app.post("/make-server-0a93cb36/submit-email", async (c) => {
   try {
-    const { email, notifyEmail } = await c.req.json();
+    const { email } = await c.req.json();
     
     if (!email) {
       return c.json({ error: "Email is required" }, 400);
@@ -57,8 +57,8 @@ app.post("/make-server-0a93cb36/submit-email", async (c) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'VectiFi Beta <onboarding@resend.dev>',
-        to: [notifyEmail],
+        from: 'VectiFi <noreply@vectifi.com>',
+        to: ['boyangcs@gmail.com', 'ireneyzpan@gmail.com'],
         subject: 'New VectiFi Beta Signup',
         html: `
           <h2>New Beta Launch Signup</h2>
