@@ -113,12 +113,17 @@ export function EmailForm() {
             />
           </div>
         </div>
-        <Button type="submit" className="h-10 sm:h-11 px-4 sm:px-6 whitespace-nowrap text-sm sm:text-base flex-shrink-0" disabled={isSubmitting}>
+        <Button 
+          type="submit" 
+          className="h-10 sm:h-11 px-4 sm:px-6 whitespace-nowrap text-sm sm:text-base flex-shrink-0" 
+          style={{ backgroundColor: '#4B5563', color: 'white' }}
+          disabled={isSubmitting}
+        >
           {isSubmitting ? 'Submitting...' : 'Request'}
         </Button>
       </div>
       {error && (
-        <p className="text-xs sm:text-sm text-red-400 text-center px-2">{error}</p>
+        <p className="text-center px-2" style={{ color: '#FF8C00', fontSize: '0.73rem' }}>{error}</p>
       )}
     </form>
   );
