@@ -1438,3 +1438,36 @@ html {
     opacity: .5;
   }
 }
+
+/* 
+ * Full viewport height layout
+ * Ensures the app fills exactly 100vh with footer always at bottom
+ */
+html {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+}
+
+body {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+#root {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: auto !important;
+}
+
+/* App container fills root and uses flexbox for layout */
+#root > div {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
