@@ -86,9 +86,9 @@ export function EmailForm() {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center gap-3 sm:gap-4 p-4 sm:p-6 md:p-8">
-        <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-green-400" />
-        <p className="text-center text-white text-sm sm:text-base px-2">
+      <div className="flex flex-col items-center gap-3 sm:gap-4 p-4 sm:p-6">
+        <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-green-500" />
+        <p className="text-center vf-text-navy text-sm sm:text-base px-2">
           Thank you for your interest! We'll be in touch soon.
         </p>
       </div>
@@ -97,33 +97,28 @@ export function EmailForm() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full space-y-3">
-      <div className="w-full flex flex-row gap-2 items-start mx-auto" style={{ maxWidth: '400px' }}>
-        <div style={{ flex: 1 }}>
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input
-              type="email"
-              placeholder="your.email@company.com"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                setError(''); // Clear error when user types
-              }}
-              className="pl-9 h-10 sm:h-11 bg-white w-full text-sm sm:text-base"
-            />
-          </div>
-        </div>
-        <Button 
-          type="submit" 
-          className="h-10 sm:h-11 px-4 sm:px-6 whitespace-nowrap text-sm sm:text-base flex-shrink-0" 
-          style={{ backgroundColor: '#4B5563', color: 'white' }}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Submitting...' : 'Request'}
-        </Button>
+      <div className="relative">
+        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+        <Input
+          type="email"
+          placeholder="your.email@company.com"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setError(''); // Clear error when user types
+          }}
+          className="pl-9 h-11 w-full text-sm sm:text-base"
+        />
       </div>
+      <Button
+        type="submit"
+        className="vf-cta-gradient h-11 w-full whitespace-nowrap text-sm text-white sm:text-base"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Submitting...' : 'Request beta access'}
+      </Button>
       {error && (
-        <p className="text-center px-2" style={{ color: '#FF8C00', fontSize: '0.73rem' }}>{error}</p>
+        <p className="text-center px-2 text-destructive" style={{ fontSize: '0.8rem' }}>{error}</p>
       )}
     </form>
   );
