@@ -23,6 +23,34 @@ const CRM = [
   'Capsule',
 ];
 
+const CONNECTOR_LOGOS: Record<string, string> = {
+  'QuickBooks Online': '/connectors/quickbooks.png',
+  Xero: '/connectors/xero.png',
+  NetSuite: '/connectors/netsuite.png',
+  'Sage Intacct': '/connectors/sage.png',
+  FreshBooks: '/connectors/freshbooks.png',
+  FreeAgent: '/connectors/freeagent.png',
+  'Clear Books': '/connectors/clearbooks.png',
+  'Microsoft Dynamics 365': '/connectors/dynamics.png',
+  Salesforce: '/connectors/salesforce.png',
+  HubSpot: '/connectors/hubspot.png',
+  Pipedrive: '/connectors/pipedrive.png',
+  Close: '/connectors/close.png',
+  Copper: '/connectors/copper.png',
+  Insightly: '/connectors/insightly.png',
+  Affinity: '/connectors/affinity.png',
+  Capsule: '/connectors/capsulecrm.png',
+};
+
+function connectorLogoPath(name: string) {
+  if (CONNECTOR_LOGOS[name]) {
+    return CONNECTOR_LOGOS[name];
+  }
+
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  return `/connectors/${slug}.svg`;
+}
+
 function IntegrationGroup({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
@@ -34,7 +62,7 @@ function IntegrationGroup({ title, items }: { title: string; items: string[] }) 
             className="flex items-center gap-3 rounded-xl border border-border/60 bg-white px-4 py-3 shadow-sm transition-shadow hover:shadow-md"
           >
             <ImageWithFallback
-              src={`/placeholder-integration-${name}.svg`}
+              src={connectorLogoPath(name)}
               alt={`${name} logo`}
               className="h-8 w-8 flex-shrink-0 rounded-md"
             />

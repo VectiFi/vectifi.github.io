@@ -1,7 +1,7 @@
 import { Button } from '../ui/button';
 import { ChevronDown } from 'lucide-react';
 
-const NAV_LINKS = ['Product', 'Solutions', 'Customers', 'Resources'];
+const NAV_LINKS = ['Product'];
 
 export function Navbar() {
   return (
@@ -25,15 +25,23 @@ export function Navbar() {
               <ChevronDown className="h-3.5 w-3.5 opacity-70" />
             </a>
           ))}
+          <a
+              key="Customers"
+              href="#customers"
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Customers
+            </a>
+          <a
+              key="Integrations"
+              href="#integrations"
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Integrations
+            </a>
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href="#cta"
-            className="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:inline-block"
-          >
-            Login
-          </a>
           <Button asChild className="vf-cta-gradient h-9 px-4 text-white">
             <a href="#cta">Get Started</a>
           </Button>

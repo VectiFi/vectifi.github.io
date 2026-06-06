@@ -4,9 +4,9 @@ const LOGOS = ['Northwind', 'Meridian', 'Lumen Co.'];
 
 export function LogoCloud() {
   return (
-    <section className="border-y border-border/60 bg-secondary/30 py-12">
+    <section id="customers" className="border-y border-border/60 bg-secondary/30 py-16">
       <div className="container mx-auto px-4 sm:px-6">
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-center text-lg text-muted-foreground">
           Powering data-driven finance teams at
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
