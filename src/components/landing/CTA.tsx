@@ -1,7 +1,9 @@
 import { EmailForm } from '../EmailForm';
 import { Card } from '../ui/card';
-import { ShieldCheck, Zap, BarChart3 } from 'lucide-react';
+import { ShieldCheck, Zap, BarChart3, Mail } from 'lucide-react';
 import { Logo } from '../Logo';
+
+const CONTACT_EMAIL = 'sysadmin@vectifi.com';
 
 const HIGHLIGHTS = [
   { icon: Zap, label: 'Live in minutes', detail: 'Connect a source and see your first dashboard today.' },
@@ -38,14 +40,23 @@ export function CTA() {
           </div>
 
           <Card className="border-border/60 p-6 shadow-xl shadow-green-900/10 sm:p-8">
-            <div className="mb-6 flex flex-col items-center text-center">
-              <Logo variant="icon" className="mb-3 h-12 w-12" />
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <Logo variant="icon" className="h-10 w-10" />
               <h3 className="text-xl font-bold vf-text-navy">Request beta access</h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Use your work email to join the exclusive beta launch.
-              </p>
             </div>
             <EmailForm />
+
+            <div className="my-5 flex items-center gap-3">
+              <span className="h-px flex-1 bg-border" />
+              <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">or</span>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-muted-foreground">
+              <Mail className="h-4 w-4 vf-text-blue" />
+              <span>Reach out directly at</span>
+              <span className="select-all font-medium vf-text-blue">{CONTACT_EMAIL}</span>
+            </div>
           </Card>
         </div>
       </div>

@@ -101,7 +101,7 @@ export function EmailForm() {
         <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
         <Input
           type="email"
-          placeholder="your.email@company.com"
+          placeholder="your.email@company.com (Use your work email)"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
