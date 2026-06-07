@@ -1,6 +1,7 @@
 import { EmailForm } from '../EmailForm';
 import { Card } from '../ui/card';
 import { ShieldCheck, Zap, BarChart3 } from 'lucide-react';
+import { Logo } from '../Logo';
 
 const HIGHLIGHTS = [
   { icon: Zap, label: 'Live in minutes', detail: 'Connect a source and see your first dashboard today.' },
@@ -24,7 +25,7 @@ export function CTA() {
             <ul className="mt-8 space-y-5">
               {HIGHLIGHTS.map(({ icon: Icon, label, detail }) => (
                 <li key={label} className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-blue-100">
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-green-100">
                     <Icon className="h-5 w-5 vf-text-blue" />
                   </span>
                   <div>
@@ -36,11 +37,9 @@ export function CTA() {
             </ul>
           </div>
 
-          <Card className="border-border/60 p-6 shadow-xl shadow-blue-900/10 sm:p-8">
-            <div className="mb-6 text-center">
-              <span className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg vf-cta-gradient text-white">
-                <span className="text-sm font-bold">V</span>
-              </span>
+          <Card className="border-border/60 p-6 shadow-xl shadow-green-900/10 sm:p-8">
+            <div className="mb-6 flex flex-col items-center text-center">
+              <Logo variant="icon" className="mb-3 h-12 w-12" />
               <h3 className="text-xl font-bold vf-text-navy">Request beta access</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Use your work email to join the exclusive beta launch.

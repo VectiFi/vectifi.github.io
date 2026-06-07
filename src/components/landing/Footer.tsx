@@ -1,3 +1,5 @@
+import { Logo } from '../Logo';
+
 const FOOTER_COLUMNS = [
   {
     title: 'Product',
@@ -19,12 +21,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg vf-cta-gradient text-white">
-                <span className="text-sm font-bold">V</span>
-              </span>
-              <span className="text-lg font-bold vf-text-navy">VectiFi</span>
-            </div>
+            <Logo variant="full" />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               The AI-native financial analytics platform that turns raw data into
               interactive dashboards and shareable insights.
@@ -51,7 +48,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 sm:flex-row">
-          <p className="text-sm text-muted-foreground">© 2025 VectiFi. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 VectiFi. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#top" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Privacy

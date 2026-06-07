@@ -1,5 +1,6 @@
 import { Button } from '../ui/button';
 import { ChevronDown } from 'lucide-react';
+import { Logo } from '../Logo';
 
 const NAV_LINKS = ['Product'];
 
@@ -7,11 +8,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg vf-cta-gradient text-white">
-            <span className="text-sm font-bold">V</span>
-          </span>
-          <span className="text-lg font-bold vf-text-navy">VectiFi</span>
+        <a href="#top" className="flex items-center">
+          <Logo variant="full" />
         </a>
 
         <nav className="hidden items-center gap-7 md:flex">

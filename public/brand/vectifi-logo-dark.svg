@@ -1,0 +1,30 @@
+<svg width="360" height="80" viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    VectiFi — Horizontal Lockup (Dark)
+    Stripe width: 6px (B)
+    Note: outline text before final production use.
+  -->
+  <rect width="360" height="80" rx="12" fill="#071C10"/>
+  <svg x="16" y="8" width="64" height="64" viewBox="0 0 52 52">
+    <defs>
+      <clipPath id="mc">
+        <rect width="52" height="52" rx="11.44"/>
+      </clipPath>
+    </defs>
+    <rect width="52" height="52" rx="11.44" fill="#0B4A30"/>
+    <g clip-path="url(#mc)">
+      <polygon points="8,11 14,11 27,43 21,43" fill="#7DC4A0"/>
+      <polygon points="17,11 47,11 44,20 20.66,20" fill="#FFFFFF"/>
+      <polygon points="22.28,24 43,24 40,32 25.53,32" fill="#FFFFFF" opacity="0.72"/>
+      <polygon points="27.16,36 38,36 36,43 30,43" fill="#FFFFFF" opacity="0.46"/>
+    </g>
+  </svg>
+  <text
+    x="97" y="51"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-weight="500"
+    font-size="34"
+    letter-spacing="-1.4">
+    <tspan fill="#FFFFFF">Vecti</tspan><tspan fill="#7DC4A0">Fi</tspan>
+  </text>
+</svg>

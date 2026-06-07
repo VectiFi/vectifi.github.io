@@ -34,8 +34,8 @@ export function Hero() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-blue-200/40 to-sky-100/30 blur-2xl" />
-            <div className="overflow-hidden rounded-2xl border border-border/60 bg-white shadow-2xl shadow-blue-900/10">
+            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-green-200/40 to-emerald-100/30 blur-2xl" />
+            <div className="overflow-hidden rounded-2xl border border-border/60 bg-white shadow-2xl shadow-green-900/10">
               <div className="flex items-center gap-1.5 border-b border-border/60 bg-secondary/40 px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-red-400/70" />
                 <span className="h-3 w-3 rounded-full bg-yellow-400/70" />

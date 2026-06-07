@@ -190,24 +190,25 @@ html {
   font-size: var(--font-size);
 }
 
-/* VectiFi brand palette (blue → indigo, no purple) */
+/* VectiFi brand palette (green → teal) */
 :root {
-  --vf-navy: #0a1f44;
-  --vf-blue: #1d4ed8;
-  --vf-indigo: #1e3a8a;
-  --vf-sky: #3b82f6;
+  --vf-deep-green: #0B3D22;
+  --vf-dark-green: #0B4A30;
+  --vf-teal: #1A8C62;
+  --vf-light-green: #7DC4A0;
+  --vf-wash-bg: #F2F7F4;
 }
 
 .vf-text-navy {
-  color: var(--vf-navy);
+  color: var(--vf-deep-green);
 }
 
 .vf-text-blue {
-  color: var(--vf-blue);
+  color: var(--vf-teal);
 }
 
 .vf-gradient-text {
-  background-image: linear-gradient(90deg, var(--vf-navy), var(--vf-blue));
+  background-image: linear-gradient(90deg, var(--vf-dark-green), var(--vf-teal));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -216,17 +217,17 @@ html {
 /* Soft brand wash used behind hero and CTA sections */
 .vf-wash {
   background:
-    radial-gradient(60% 70% at 80% 10%, rgba(59, 130, 246, 0.18), transparent 60%),
-    radial-gradient(50% 60% at 15% 30%, rgba(29, 78, 216, 0.14), transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, #f4f7ff 100%);
+    radial-gradient(60% 70% at 80% 10%, rgba(125, 196, 160, 0.18), transparent 60%),
+    radial-gradient(50% 60% at 15% 30%, rgba(26, 140, 98, 0.14), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #F2F7F4 100%);
 }
 
 .vf-cta-gradient {
-  background-image: linear-gradient(90deg, var(--vf-blue), var(--vf-indigo));
+  background-image: linear-gradient(90deg, var(--vf-teal), var(--vf-dark-green));
 }
 
 .vf-cta-gradient:hover {
-  background-image: linear-gradient(90deg, var(--vf-indigo), var(--vf-blue));
+  background-image: linear-gradient(90deg, var(--vf-dark-green), var(--vf-teal));
 }
 
 html {

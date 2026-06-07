@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 52 52"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <!--
+    VectiFi — App Icon Mark
+    Stripe width: 6px (B)  Slope: 13/32  Gap: 3px uniform
+    Band heights: 9 : 8 : 7 (subtle taper)  Gaps: 4 : 4
+  -->
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip">
+      <rect
+         width="52"
+         height="52"
+         rx="11.44"
+         id="rect1"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <rect
+     width="52"
+     height="52"
+     rx="11.44"
+     fill="#0b4a30"
+     id="rect2"
+     x="0"
+     y="0" />
+  <g
+     clip-path="url(#clip)"
+     id="g5"
+     transform="translate(-1.2706114,-0.76236684)">
+    <!-- Sage diagonal stripe \ — 6px wide -->
+    <polygon
+       points="14,11 27,43 21,43 8,11 "
+       fill="#7dc4a0"
+       id="polygon2" />
+    <!-- Band 1 — full white, height 9 -->
+    <path
+       id="polygon3"
+       style="fill:#ffffff"
+       d="m 17,11 h 30 l -3.6,9 H 20.66 Z" />
+    <!-- Band 2 — 72% white, height 8 -->
+    <path
+       id="polygon4"
+       style="opacity:0.72;fill:#ffffff"
+       d="M 39.6,32 H 25.8 L 22.4,24 H 43 Z"
+       transform="matrix(0.93799008,0,0,1,1.3815811,0)" />
+    <!-- Band 3 — 46% white, height 7 -->
+    <path
+       id="path6"
+       style="opacity:0.46;fill:#ffffff;stroke-width:0.502982"
+       d="m 33.951465,43.048316 h -3.893876 l -2.791144,-7.036653 h 9.581779 z" />
+  </g>
+</svg>
