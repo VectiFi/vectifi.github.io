@@ -1,0 +1,7 @@
+# Minimal Supabase config for deploying the beta-signup edge function.
+# project_id is a local label; the deployed project is chosen via `supabase link`.
+project_id = "vectifi-landing"
+
+[functions.make-server-0a93cb36]
+# The function uses a custom JWT-less flow guarded by the anon key in the client.
+verify_jwt = false
