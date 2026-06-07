@@ -29,7 +29,7 @@ export function Feature({
         <ul className="mt-6 space-y-3">
           {bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
+              <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
                 <Check className="h-3.5 w-3.5 vf-text-blue" />
               </span>
               <span className="text-base text-foreground">{bullet}</span>
@@ -40,11 +40,11 @@ export function Feature({
 
       <div className={reverse ? 'lg:order-1' : ''}>
         <div className="relative">
-          <div className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-blue-100/50 to-sky-50/40 blur-xl" />
+          <div className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-green-100/50 to-emerald-50/40 blur-xl" />
           <ImageWithFallback
             src={imageSrc}
             alt={imageAlt}
-            className="aspect-[4/3] w-full rounded-2xl border border-border/60 bg-white object-cover shadow-xl shadow-blue-900/10"
+            className="aspect-[4/3] w-full rounded-2xl border border-border/60 bg-white object-cover shadow-xl shadow-green-900/10"
           />
         </div>
       </div>
@@ -65,7 +65,7 @@ export function Features() {
             'Filter, slice, and drill down on any metric in real time',
             'Share read-only views with stakeholders securely',
           ]}
-          imageSrc="/placeholder-feature-dashboards.png"
+          imageSrc="/placeholder-feature-dashboards.svg"
           imageAlt="VectiFi interactive dashboard builder"
         />
         <Feature
@@ -78,7 +78,7 @@ export function Features() {
             'Automatic anomaly detection and trend alerts',
             'Narrated explanations you can drop into any report',
           ]}
-          imageSrc="/placeholder-feature-ai.png"
+          imageSrc="/placeholder-feature-ai.svg"
           imageAlt="VectiFi AI-assisted insights panel"
         />
       </div>

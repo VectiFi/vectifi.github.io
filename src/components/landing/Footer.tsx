@@ -48,7 +48,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 sm:flex-row">
-          <p className="text-sm text-muted-foreground">© 2026 VectiFi. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 VectiFi, Inc. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#top" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               Privacy

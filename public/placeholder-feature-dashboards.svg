@@ -1,0 +1,56 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dashGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#0B4A30;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A8C62;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dashGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#1A8C62;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7DC4A0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="#F2F7F4"/>
+
+  <!-- Soft background blobs -->
+  <circle cx="240" cy="220" r="180" fill="#7DC4A0" opacity="0.12"/>
+  <circle cx="980" cy="700" r="220" fill="#1A8C62" opacity="0.10"/>
+
+  <!-- Floating card: bar chart concept -->
+  <g transform="translate(180, 210)">
+    <rect width="420" height="300" rx="28" fill="#FFFFFF"/>
+    <rect width="420" height="300" rx="28" fill="none" stroke="#E2EDE7" stroke-width="2"/>
+    <rect x="70" y="190" width="50" height="70" rx="12" fill="url(#dashGrad2)"/>
+    <rect x="150" y="140" width="50" height="120" rx="12" fill="url(#dashGrad2)"/>
+    <rect x="230" y="90" width="50" height="170" rx="12" fill="url(#dashGrad)"/>
+    <rect x="310" y="50" width="50" height="210" rx="12" fill="url(#dashGrad)"/>
+  </g>
+
+  <!-- Floating card: donut concept -->
+  <g transform="translate(660, 150)">
+    <rect width="360" height="300" rx="28" fill="#FFFFFF"/>
+    <rect width="360" height="300" rx="28" fill="none" stroke="#E2EDE7" stroke-width="2"/>
+    <circle cx="180" cy="150" r="90" fill="none" stroke="#E2EDE7" stroke-width="34"/>
+    <path d="M 180 60 A 90 90 0 0 1 261 191 L 180 150 Z" fill="none" stroke="#0B4A30" stroke-width="34" stroke-linecap="round"/>
+    <path d="M 261 191 A 90 90 0 0 1 110 213 L 180 150 Z" fill="none" stroke="#1A8C62" stroke-width="34" stroke-linecap="round"/>
+    <path d="M 110 213 A 90 90 0 0 1 180 60 L 180 150 Z" fill="none" stroke="#7DC4A0" stroke-width="34" stroke-linecap="round"/>
+  </g>
+
+  <!-- Floating card: line/trend concept -->
+  <g transform="translate(330, 540)">
+    <rect width="560" height="240" rx="28" fill="#FFFFFF"/>
+    <rect width="560" height="240" rx="28" fill="none" stroke="#E2EDE7" stroke-width="2"/>
+    <polyline points="60,170 150,140 240,160 330,90 420,110 500,50" fill="none" stroke="url(#dashGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="60" cy="170" r="9" fill="#0B4A30"/>
+    <circle cx="150" cy="140" r="9" fill="#0B4A30"/>
+    <circle cx="240" cy="160" r="9" fill="#0B4A30"/>
+    <circle cx="330" cy="90" r="9" fill="#0B4A30"/>
+    <circle cx="420" cy="110" r="9" fill="#0B4A30"/>
+    <circle cx="500" cy="50" r="9" fill="#0B4A30"/>
+  </g>
+
+  <!-- connecting dots -->
+  <circle cx="610" cy="470" r="6" fill="#7DC4A0"/>
+  <circle cx="650" cy="500" r="6" fill="#7DC4A0"/>
+  <circle cx="640" cy="150" r="6" fill="#7DC4A0"/>
+</svg>
