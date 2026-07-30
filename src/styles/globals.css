@@ -230,6 +230,54 @@ html {
   background-image: linear-gradient(90deg, var(--vf-dark-green), var(--vf-teal));
 }
 
+/* Dark hero: the header sits transparent on top of this until you scroll */
+.vf-hero-dark {
+  background:
+    radial-gradient(70% 60% at 85% 12%, rgba(26, 140, 98, 0.38), transparent 62%),
+    radial-gradient(55% 55% at 8% 88%, rgba(125, 196, 160, 0.14), transparent 65%),
+    linear-gradient(180deg, var(--vf-deep-green) 0%, #072A17 100%);
+}
+
+.vf-hero-glow {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(125, 196, 160, 0.3), transparent 70%);
+}
+
+.vf-text-light {
+  color: var(--vf-light-green);
+}
+
+/* Pale pill button used on dark backgrounds */
+.vf-cta-light {
+  background-color: var(--vf-light-green);
+  color: var(--vf-deep-green);
+}
+
+.vf-cta-light:hover {
+  background-color: #9BD8B9;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Keep anchor targets clear of the fixed header */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* The nav relies on smooth scrolling a full viewport — a vestibular trigger.
+   Honour the OS setting for that and for the header/hero transitions. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
