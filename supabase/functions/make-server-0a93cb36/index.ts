@@ -22,6 +22,24 @@ app.get("/make-server-0a93cb36/health", (c) => {
   return c.json({ status: "ok" });
 });
 
+// Pinged on a schedule by .github/workflows/keepalive.yml.
+//
+// Deliberately performs a real database read: free-tier projects are paused for
+// *database* inactivity, and /health above answers from memory without touching
+// Postgres, so pinging that alone would not have kept the project awake.
+//
+// Reports db:false rather than throwing, so the caller can tell "function is up
+// but the database is not answering" from "the whole project is gone".
+app.get("/make-server-0a93cb36/keepalive", async (c) => {
+  try {
+    await kv.get("keepalive:probe");
+    return c.json({ status: "ok", db: true, at: new Date().toISOString() });
+  } catch (error) {
+    console.log(`Keepalive database read failed: ${error}`);
+    return c.json({ status: "degraded", db: false, error: String(error) }, 503);
+  }
+});
+
 app.post("/make-server-0a93cb36/submit-email", async (c) => {
   try {
     const body = await c.req.json();

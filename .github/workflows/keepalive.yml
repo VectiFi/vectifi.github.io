@@ -1,0 +1,84 @@
+name: Supabase keepalive
+
+# The beta signup form is the site's only lead-capture path, and it depends on a
+# free-tier Supabase project. Those pause after ~7 days of database inactivity,
+# and a paused project stops resolving in DNS — the form then fails for every
+# visitor with a generic "Failed to submit", with no bounce, log or alert. That
+# has already happened twice (Oct 2025 and Jun 2026 projects).
+#
+# This job does two things:
+#   1. Reads the database every other day, so the project registers activity.
+#   2. Fails loudly if the endpoint is not healthy, which emails the repo owner.
+#
+# (2) is the part that is guaranteed to work. (1) depends on Supabase continuing
+# to count API-driven reads as activity, which is their policy to change — treat
+# it as best-effort, and treat a failure here as "go and look", not as noise.
+
+on:
+  schedule:
+    # 07:14 UTC every other day. Off-the-hour on purpose: GitHub drops scheduled
+    # runs when the cron minute is congested, and :00 is the worst offender.
+    - cron: '14 7 */2 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve the Supabase project from the client config
+        id: cfg
+        # Read the ref out of the app rather than hardcoding it here, so this
+        # keeps working if the project is ever replaced again.
+        run: |
+          ref=$(grep -oE 'projectId = "[^"]+"' src/utils/supabase/info.tsx | cut -d'"' -f2)
+          key=$(grep -oE 'publicAnonKey = "[^"]+"' src/utils/supabase/info.tsx | cut -d'"' -f2)
+          if [ -z "$ref" ] || [ -z "$key" ]; then
+            echo "Could not parse projectId/publicAnonKey from src/utils/supabase/info.tsx" >&2
+            exit 1
+          fi
+          echo "ref=$ref" >> "$GITHUB_OUTPUT"
+          echo "::add-mask::$key"
+          echo "key=$key" >> "$GITHUB_OUTPUT"
+          echo "Project ref: $ref"
+
+      - name: Ping keepalive (reads the database)
+        run: |
+          url="https://${{ steps.cfg.outputs.ref }}.supabase.co/functions/v1/make-server-0a93cb36/keepalive"
+          echo "GET $url"
+
+          # Retry: a cold project can take a moment, and a transient blip should
+          # not page anyone. Real outages fail all three attempts.
+          for attempt in 1 2 3; do
+            code=$(curl -sS -o response.json -w '%{http_code}' --max-time 30 \
+              -H "Authorization: Bearer ${{ steps.cfg.outputs.key }}" \
+              -H "apikey: ${{ steps.cfg.outputs.key }}" \
+              "$url") && break || code="000"
+            echo "attempt $attempt failed to connect"
+            sleep 15
+          done
+
+          echo "HTTP $code"
+          cat response.json 2>/dev/null || true
+          echo
+
+          if [ "$code" = "000" ]; then
+            echo "::error::Supabase project is unreachable (DNS or network). It is most likely PAUSED — restore it at https://supabase.com/dashboard/project/${{ steps.cfg.outputs.ref }} . The beta signup form is failing for every visitor until then."
+            exit 1
+          fi
+
+          if [ "$code" != "200" ]; then
+            echo "::error::Keepalive returned HTTP $code. The signup form is probably broken; see the response body above."
+            exit 1
+          fi
+
+          if ! grep -q '"db":true' response.json; then
+            echo "::error::Edge function responded but the database read failed, so this ping did NOT count as activity and the project can still pause. Check the kv_store_0a93cb36 table and the function's service-role key."
+            exit 1
+          fi
+
+          echo "OK — function up and database read succeeded."
