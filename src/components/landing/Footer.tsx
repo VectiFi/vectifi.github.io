@@ -1,17 +1,32 @@
 import { Logo } from '../Logo';
 
+// href '#top' marks a destination that does not exist yet.
 const FOOTER_COLUMNS = [
   {
     title: 'Product',
-    links: ['Dashboards', 'AI Insights', 'Integrations', 'Pricing'],
+    links: [
+      { label: 'Dashboards', href: '#top' },
+      { label: 'AI Insights', href: '#top' },
+      { label: 'Integrations', href: '#integrations' },
+      { label: 'Pricing', href: '#top' },
+    ],
   },
   {
     title: 'Company',
-    links: ['About', 'Customers', 'Careers', 'Contact'],
+    links: [
+      { label: 'About', href: '#top' },
+      { label: 'Customers', href: '#customers' },
+      { label: 'Careers', href: '#top' },
+      { label: 'Contact', href: '#cta' },
+    ],
   },
   {
     title: 'Resources',
-    links: ['Documentation', 'Blog', 'Security', 'Status'],
+    links: [
+      { label: 'Documentation', href: '#top' },
+      { label: 'Privacy Policy', href: '/privacy/' },
+      { label: 'Cookie Policy', href: '/cookies/' },
+    ],
   },
 ];
 
@@ -32,13 +47,13 @@ export function Footer() {
             <div key={column.title}>
               <h4 className="text-sm font-semibold vf-text-navy">{column.title}</h4>
               <ul className="mt-4 space-y-3">
-                {column.links.map((link) => (
-                  <li key={link}>
+                {column.links.map(({ label, href }) => (
+                  <li key={label}>
                     <a
-                      href="#top"
+                      href={href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link}
+                      {label}
                     </a>
                   </li>
                 ))}
@@ -47,16 +62,8 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 sm:flex-row">
+        <div className="mt-12 border-t border-border pt-8">
           <p className="text-sm text-muted-foreground">© 2026 VectiFi, Inc. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#top" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Privacy
-            </a>
-            <a href="#top" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              Terms
-            </a>
-          </div>
         </div>
       </div>
     </footer>

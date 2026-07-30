@@ -1,11 +1,43 @@
 
-  import { defineConfig } from 'vite';
+  import { defineConfig, type Plugin } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import tailwindcss from '@tailwindcss/vite';
+  import fs from 'fs';
   import path from 'path';
 
+  // Standalone HTML pages live in public/ (e.g. /privacy/, /app/) because this
+  // app has no router. In dev, Vite's SPA fallback answers a directory request
+  // like "/privacy/" with the landing page instead — a silent 200 showing the
+  // wrong page, which does not happen in the built site. Serve those pages the
+  // way production does, and redirect the missing trailing slash the way
+  // GitHub Pages does.
+  function publicHtmlPages(): Plugin {
+    const publicDir = path.resolve(__dirname, 'public');
+    const pageFor = (dir: string) => path.join(publicDir, dir, 'index.html');
+
+    return {
+      name: 'serve-public-html-pages',
+      apply: 'serve',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          const [pathname] = (req.url ?? '/').split('?');
+
+          if (pathname.length > 1 && pathname.endsWith('/') && fs.existsSync(pageFor(pathname))) {
+            req.url = `${pathname}index.html`;
+          } else if (/^\/[^./]+$/.test(pathname) && fs.existsSync(pageFor(pathname))) {
+            res.statusCode = 301;
+            res.setHeader('Location', `${pathname}/`);
+            return res.end();
+          }
+
+          next();
+        });
+      },
+    };
+  }
+
   export default defineConfig({
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), publicHtmlPages()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
