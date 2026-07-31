@@ -10,7 +10,7 @@ import { ArrowUp, MessageSquare, Sparkles } from 'lucide-react';
  */
 export function AskCard() {
   return (
-    <div className="static mt-4 w-full rounded-2xl bg-[#0B4A30] p-3 shadow-xl shadow-black/40 ring-1 ring-white/10 lg:absolute lg:-bottom-12 lg:-left-24 lg:mt-0 lg:w-[15rem]">
+    <div className="static mt-4 w-full rounded-2xl bg-[#0B4A30] p-3 shadow-xl shadow-black/40 ring-1 ring-white/10 lg:absolute lg:-bottom-10 lg:-left-20 lg:mt-0 lg:w-[12.5rem] lg:p-2.5">
       <p className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-wide text-[#7DC4A0]">
         <MessageSquare className="h-3 w-3" />
         Ask AI

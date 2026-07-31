@@ -80,11 +80,14 @@ export function Integrations() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight vf-text-navy sm:text-4xl">
-            Connects to the tools your data already lives in.
+            One AI, <span className="vf-gradient-text-light">connecting the dots</span>{' '}
+            with your company context.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Sync accounting and CRM data in a few clicks. VectiFi keeps every source in
-            lockstep so your dashboards and insights are always current.
+            VectiFi does more than integrate: during onboarding we build your data
+            pipelines, annotate the data, and link your unique company context, from
+            accounting and CRM to HR and payments. Easy from day one: nothing to build,
+            nothing to babysit, minimal data maintenance cost on your team.
           </p>
         </div>
 

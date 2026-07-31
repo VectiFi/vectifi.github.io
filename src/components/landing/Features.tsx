@@ -1,16 +1,14 @@
 import type { ReactNode } from 'react';
-import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { Check } from 'lucide-react';
 import { DashboardFigure } from './DashboardFigure';
+import { ReportFigure } from './ReportFigure';
 
 interface FeatureProps {
   eyebrow: string;
   title: ReactNode;
   description: string;
   bullets: string[];
-  figure?: ReactNode;
-  imageSrc?: string;
-  imageAlt?: string;
+  figure: ReactNode;
   reverse?: boolean;
 }
 
@@ -20,8 +18,6 @@ export function Feature({
   description,
   bullets,
   figure,
-  imageSrc,
-  imageAlt,
   reverse = false,
 }: FeatureProps) {
   return (
@@ -45,14 +41,7 @@ export function Feature({
       <div className={`min-w-0 ${reverse ? 'lg:order-1' : ''}`}>
         <div className="relative">
           <div className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-green-100/50 to-emerald-50/40 blur-xl" />
-          {figure ??
-            (imageSrc && (
-              <ImageWithFallback
-                src={imageSrc}
-                alt={imageAlt ?? ''}
-                className="aspect-[4/3] w-full rounded-2xl border border-border/60 bg-white object-cover shadow-xl shadow-green-900/10"
-              />
-            ))}
+          {figure}
         </div>
       </div>
     </div>
@@ -93,15 +82,19 @@ export function InsightsFeature() {
         <Feature
           reverse
           eyebrow="AI-assisted insights"
-          title="Ask questions. Get answers, not spreadsheets."
-          description="VectiFi's AI analyst watches your data, flags what changed, and explains why in plain language. Ask follow-up questions and get charts, trends, and recommendations on demand."
+          title={
+            <>
+              Reports that write themselves.{' '}
+              <span className="vf-gradient-text-light">Insights before you ask.</span>
+            </>
+          }
+          description="VectiFi's AI analyst watches your data, connects it with market news and your company context, and explains what changed in plain language. Customize the report, or request a new cut whenever you need one."
           bullets={[
-            'Natural-language queries across all your data',
-            'Automatic anomaly detection and trend alerts',
+            'Reads your whole business as one, market news and company context included',
+            'Customize the report or request a new cut in plain English',
             'Narrated explanations you can drop into any report',
           ]}
-          imageSrc="/placeholder-feature-ai.svg"
-          imageAlt="VectiFi AI-assisted insights panel"
+          figure={<ReportFigure />}
         />
       </div>
     </section>

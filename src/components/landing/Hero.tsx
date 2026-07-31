@@ -48,7 +48,9 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="lg:pt-12">
+          {/* Uniform scale: the mock's height is content-driven, so width caps
+              alone narrow it without shortening it toward the text column. */}
+          <div className="lg:origin-top lg:scale-[0.8] lg:pt-12">
             <HeroFigure />
           </div>
         </div>
