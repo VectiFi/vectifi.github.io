@@ -1,6 +1,5 @@
 import { Navbar } from './components/landing/Navbar';
 import { Hero } from './components/landing/Hero';
-import { LogoCloud } from './components/landing/LogoCloud';
 import { Stats } from './components/landing/Stats';
 import { Features } from './components/landing/Features';
 import { Integrations } from './components/landing/Integrations';
@@ -13,7 +12,6 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <LogoCloud />
         <Stats />
         <Features />
         <Integrations />

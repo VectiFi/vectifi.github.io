@@ -54,7 +54,7 @@ export function Feature({
 
 export function Features() {
   return (
-    <section id="features" className="vf-wash py-20 md:py-28">
+    <section id="features" className="vf-section vf-wash py-20 md:py-28">
       <div className="container mx-auto space-y-24 px-4 sm:px-6">
         <Feature
           eyebrow="Interactive dashboards"

@@ -13,7 +13,7 @@ const HIGHLIGHTS = [
 
 export function CTA() {
   return (
-    <section id="cta" className="vf-wash py-20 md:py-28">
+    <section id="cta" className="vf-section vf-wash py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>

@@ -16,9 +16,11 @@ const STATS = [
   },
 ];
 
+// Carries id="customers" for the footer's Customers link — it moved here when
+// the logo cloud section was removed.
 export function Stats() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section id="customers" className="vf-section bg-white py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight vf-text-navy sm:text-4xl">

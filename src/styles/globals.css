@@ -256,6 +256,20 @@ html {
   background-color: #9BD8B9;
 }
 
+/* Even vertical rhythm between sections. Short sections (Stats, CTA) were
+   reading as thin strips next to the 88vh hero, so they get a height floor and
+   centre their content in it; tall ones (Features) simply exceed the floor and
+   are unaffected. The py-* padding stays as the minimum gutter for that case.
+   Not applied below md, where forcing tall sections would just add dead scroll. */
+@media (min-width: 768px) {
+  .vf-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 48rem;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

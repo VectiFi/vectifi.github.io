@@ -6,7 +6,6 @@ import { cn } from '../ui/utils';
 
 const NAV_LINKS = [
   { label: 'Product', href: '#features', caret: true },
-  { label: 'Customers', href: '#customers' },
   { label: 'Integrations', href: '#integrations' },
 ];
 

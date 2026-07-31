@@ -76,7 +76,7 @@ function IntegrationGroup({ title, items }: { title: string; items: string[] }) 
 
 export function Integrations() {
   return (
-    <section id="integrations" className="bg-white py-20 md:py-28">
+    <section id="integrations" className="vf-section bg-white py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight vf-text-navy sm:text-4xl">
