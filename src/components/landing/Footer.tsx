@@ -38,7 +38,7 @@ export function Footer() {
           <div>
             <Logo variant="full" />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              The AI-native financial analytics platform that turns raw data into
+              The AI-native business analytics platform that turns raw data into
               interactive dashboards and shareable insights.
             </p>
           </div>

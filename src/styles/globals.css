@@ -214,12 +214,43 @@ html {
   color: transparent;
 }
 
-/* Soft brand wash used behind hero and CTA sections */
+/* Brighter gradient for highlighted words inside navy headlines — the standard
+   variant starts at dark green, which is indistinguishable from vf-text-navy,
+   so the first half of the highlight disappears. The end color must hold the
+   3:1 large-text contrast floor on the vf-wash base (#EDF4F0) — the binding
+   case, stricter than white. #2A9468 = 3.4:1 there. */
+.vf-gradient-text-light {
+  background-image: linear-gradient(90deg, var(--vf-teal), #2A9468);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient highlight for the dark hero: light green sweeping to pale mint.
+   The other two gradients start too dark to read on vf-hero-dark. */
+.vf-gradient-text-hero {
+  background-image: linear-gradient(90deg, var(--vf-light-green), #C9EEDD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft brand wash band behind alternating sections. Tinted edge-to-edge (never
+   pure white at the top, or the boundary with a white section disappears),
+   with a faint dot grid and hairline edges so the transition reads. */
 .vf-wash {
+  border-top: 1px solid rgba(11, 61, 34, 0.08);
+  border-bottom: 1px solid rgba(11, 61, 34, 0.08);
   background:
-    radial-gradient(60% 70% at 80% 10%, rgba(125, 196, 160, 0.18), transparent 60%),
-    radial-gradient(50% 60% at 15% 30%, rgba(26, 140, 98, 0.14), transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, #F2F7F4 100%);
+    radial-gradient(60% 70% at 80% 10%, rgba(125, 196, 160, 0.2), transparent 60%),
+    radial-gradient(50% 60% at 15% 30%, rgba(26, 140, 98, 0.16), transparent 60%),
+    radial-gradient(rgba(11, 61, 34, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, #F6FAF7 0%, #EDF4F0 100%);
+  background-size:
+    auto,
+    auto,
+    22px 22px,
+    auto;
 }
 
 .vf-cta-gradient {
@@ -248,12 +279,12 @@ html {
 
 /* Pale pill button used on dark backgrounds */
 .vf-cta-light {
-  background-color: var(--vf-light-green);
+  background-image: linear-gradient(90deg, var(--vf-light-green), #A9E3C4);
   color: var(--vf-deep-green);
 }
 
 .vf-cta-light:hover {
-  background-color: #9BD8B9;
+  background-image: linear-gradient(90deg, #A9E3C4, var(--vf-light-green));
 }
 
 /* Even vertical rhythm between sections. Short sections (Stats, CTA) were

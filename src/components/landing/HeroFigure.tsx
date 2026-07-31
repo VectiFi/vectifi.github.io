@@ -22,7 +22,7 @@ export function HeroFigure() {
     <div
       role="img"
       aria-label="Illustration of the VectiFi app: a dashboard of revenue and margin metrics built from a plain-language question, with an AI-written insight alongside it."
-      className="relative mx-auto w-full max-w-[36rem] lg:max-w-none"
+      className="relative mx-auto w-full max-w-[36rem] lg:max-w-[33rem]"
     >
       {/*
         No negative z-index here: the hero <section> is positioned but sets no
