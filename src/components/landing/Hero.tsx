@@ -16,14 +16,15 @@ export function Hero() {
           Turn raw data into decisions
         </p>
         <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5rem]">
-          AI-native <span className="vf-gradient-text-hero">Business Analytics</span>
+          AI-native <span className="vf-gradient-text-hero">Business Intelligence</span>
         </h1>
 
         <div className="mt-8 grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="max-w-xl lg:pt-16">
             <p className="max-w-lg text-xl leading-relaxed text-white/70">
-              VectiFi connects your business data, builds interactive dashboards in
-              minutes, and gives every decision maker an AI analyst on call.
+              VectiFi connects your business data, builds interactive dashboards,
+              and gives every decision maker an AI analyst on call. We act as your
+              data team as well, delivering the solution end to end.
               No SQL, no spreadsheets, no waiting.
             </p>
             <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">

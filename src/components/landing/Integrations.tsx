@@ -1,4 +1,5 @@
 import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { Check } from 'lucide-react';
 
 // Sourced from Merge.dev unified API categories: Accounting and CRM.
 const ACCOUNTING = [
@@ -84,10 +85,31 @@ export function Integrations() {
             with your company context.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            VectiFi does more than integrate: during onboarding we build your data
-            pipelines, annotate the data, and link your unique company context, from
-            accounting and CRM to HR and payments. Easy from day one: nothing to build,
-            nothing to babysit, minimal data maintenance cost on your team.
+            VectiFi does more than integrate:
+          </p>
+          <ul className="mx-auto mt-4 max-w-xl space-y-3 text-left text-lg text-muted-foreground">
+            <li className="flex items-start gap-3">
+              <Check className="mt-1.5 h-4 w-4 flex-shrink-0 vf-text-blue" aria-hidden />
+              <span>
+                We build your data pipelines during onboarding: accounting, CRM,
+                HR, payments, and more.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="mt-1.5 h-4 w-4 flex-shrink-0 vf-text-blue" aria-hidden />
+              <span>We annotate the data and link your unique company context.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="mt-1.5 h-4 w-4 flex-shrink-0 vf-text-blue" aria-hidden />
+              <span>
+                We evolve that context automatically based on how your team uses
+                VectiFi.
+              </span>
+            </li>
+          </ul>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Easy from day one: nothing to build, nothing to babysit, minimal data
+            maintenance cost on your team.
           </p>
         </div>
 

@@ -7,7 +7,7 @@ const CONTACT_EMAIL = 'sysadmin@vectifi.com';
 
 const HIGHLIGHTS = [
   { icon: Zap, label: 'Live in minutes', detail: 'Connect a source and see your first dashboard today.' },
-  { icon: BarChart3, label: 'Built for finance', detail: 'Purpose-built for FP&A, reporting, and BI workflows.' },
+  { icon: BarChart3, label: 'Built for finance and operations', detail: 'Purpose-built for BI, reporting, finance, and operations workflows.' },
   { icon: ShieldCheck, label: 'Secure by design', detail: 'Encryption in transit and at rest, SOC 2 aligned.' },
 ];
 
