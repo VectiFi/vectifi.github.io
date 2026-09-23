@@ -7,11 +7,11 @@ function Bar({ className }: { className: string }) {
 }
 
 // The report is customized per reader; these chips carry that story.
-const SCOPE_CHIPS = ['Exec weekly', 'Retention focus', 'SSO-launch context'];
+const SCOPE_CHIPS = ['CFO weekly', 'Denials focus', 'Fee-schedule context'];
 
 // One connected storyline across internal data, fetched news, and company
-// context: a heavy renewal quarter, strained accounts, a competitor price cut,
-// and the shipped feature that becomes the play. All figures are invented.
+// context: a heavy contract-renewal quarter, rising denials, a fee-schedule
+// cut, and the shipped workflow that becomes the play. All figures are invented.
 const REPORT_ROWS: Array<{
   signal: string;
   source: string;
@@ -19,11 +19,11 @@ const REPORT_ROWS: Array<{
   impact: string;
   tone: 'up' | 'down' | 'neutral';
 }> = [
-  { signal: 'Q4 enterprise renewals total $1.9M', source: 'Billing', kind: 'internal', impact: '3× normal load', tone: 'neutral' },
-  { signal: 'Tickets from top-tier accounts up 22%', source: 'Support', kind: 'internal', impact: '8 accounts at risk', tone: 'down' },
-  { signal: 'Competitor cut enterprise prices 10%', source: 'News', kind: 'news', impact: 'Renewal pressure', tone: 'down' },
-  { signal: 'NRR held at 108% through June', source: 'Billing', kind: 'internal', impact: 'Base is healthy', tone: 'up' },
-  { signal: 'SSO shipped to every plan last week', source: 'Context', kind: 'context', impact: 'Retention lever', tone: 'up' },
+  { signal: 'Q4 payer contract renewals total $1.9M', source: 'Billing', kind: 'internal', impact: '3× normal load', tone: 'neutral' },
+  { signal: 'Denials from your largest payer up 22%', source: 'Claims', kind: 'internal', impact: '8 claims at risk', tone: 'down' },
+  { signal: 'Final rule trims the fee schedule 2.8%', source: 'News', kind: 'news', impact: 'Margin pressure', tone: 'down' },
+  { signal: 'Collection rate held at 96% through June', source: 'Billing', kind: 'internal', impact: 'Base is healthy', tone: 'up' },
+  { signal: 'Denial-appeal workflow live since last week', source: 'Context', kind: 'context', impact: 'Recovery lever', tone: 'up' },
 ];
 
 const IMPACT_TONE: Record<(typeof REPORT_ROWS)[number]['tone'], string> = {
@@ -58,7 +58,7 @@ export function ReportFigure() {
     <div
       ref={figureRef}
       role="img"
-      aria-label="Illustration of a customized VectiFi weekly insight report: scope chips, a table of business signals mixing internal metrics, fetched news, and company context, the AI's plain-language summary, and a bar for requesting a different report. All figures are invented."
+      aria-label="Illustration of a customized VectiFi weekly insight report: scope chips, a table of financial signals mixing internal metrics, payer news, and organization context, the AI's plain-language summary, and a bar for requesting a different report. All figures are invented."
       className="flex flex-col gap-3.5 rounded-2xl border border-border/60 bg-white p-5 shadow-xl shadow-green-900/10 sm:p-6"
     >
       <div className="flex items-center justify-between gap-3">
@@ -135,8 +135,9 @@ export function ReportFigure() {
           In plain language
         </p>
         <p className="mt-2 text-xs leading-relaxed text-slate-600">
-          Q4 carries three times the usual renewal load just as a competitor cuts prices.
-          Your SSO launch is the lever: lead every renewal conversation with it.
+          Q4 carries three times the usual contract-renewal load just as the fee
+          schedule tightens. Your new appeals workflow is the lever: recover the
+          flagged denials before renegotiations start.
         </p>
       </div>
 
@@ -197,7 +198,7 @@ export function ReportFigure() {
             style={{ opacity: inView ? 1 : 0, ...anim(2350) }}
           >
             <span className="h-3.5 w-3.5 shrink-0 rounded-[4px] border-[1.5px] border-[#1A8C62]/50" />
-            Brief CS on outreach to the 8 flagged accounts
+            Route the 8 flagged denials to the new appeals workflow
           </li>
           {(['w-52', 'w-40'] as const).map((w, i) => (
             <li
@@ -218,7 +219,7 @@ export function ReportFigure() {
       >
         <Sparkles className="h-4 w-4 shrink-0 text-[#1A8C62]" />
         <span className="min-w-0 flex-1 truncate text-xs text-slate-400">
-          Request a different cut: churn by segment, NRR by plan…
+          Request a different cut: denials by payer, A/R aging by site…
         </span>
         <span className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A8C62]">
           <ArrowUp className="h-3.5 w-3.5 text-white" />

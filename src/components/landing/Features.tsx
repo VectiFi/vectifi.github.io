@@ -61,11 +61,11 @@ export function DashboardsFeature() {
               All your data. <span className="vf-gradient-text-light">No overhead.</span>
             </>
           }
-          description="Describe the dashboard you want in plain English and VectiFi's AI builds it live from your connected data. No BI backlog, no request queue, no specialist army on payroll. The cost of insight drops to a sentence."
+          description="Describe the dashboard you want in plain English and VectiFi's agentic AI builds it live from your billing, payer, and operational data. No analyst backlog, no request queue, no specialist army on payroll. The cost of insight drops to a sentence."
           bullets={[
             'Describe a dashboard in plain English and the AI builds it from live data',
-            'Cut reporting costs: no SQL, no BI specialists, no maintenance backlog',
-            'Share read-only views with stakeholders securely',
+            'Cut reporting costs: no SQL, no report writers, no maintenance backlog',
+            'Share read-only views with leadership and board securely',
           ]}
           figure={<DashboardFigure />}
         />
@@ -88,11 +88,11 @@ export function InsightsFeature() {
               <span className="vf-gradient-text-light">Insights before you ask.</span>
             </>
           }
-          description="VectiFi's AI analyst watches your data, connects it with market news and your company context, and explains what changed in plain language. Customize the report, or request a new cut whenever you need one."
+          description="VectiFi's AI analyst watches your financials, connects them with payer and policy news and your organization's context, and explains what changed in plain language. Customize the report, or request a new cut whenever you need one."
           bullets={[
-            'Reads your whole business as one, market news and company context included',
+            'Reads your whole organization as one, payer and policy news included',
             'Customize the report or request a new cut in plain English',
-            'Narrated explanations you can drop into any report',
+            'Narrated explanations you can drop into any board pack',
           ]}
           figure={<ReportFigure />}
         />

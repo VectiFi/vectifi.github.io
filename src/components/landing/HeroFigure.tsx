@@ -21,7 +21,7 @@ export function HeroFigure() {
   return (
     <div
       role="img"
-      aria-label="Illustration of the VectiFi app: a dashboard of revenue and margin metrics built from a plain-language question, with an AI-written insight alongside it."
+      aria-label="Illustration of the VectiFi app: a revenue-cycle dashboard of collections and payer metrics built from a plain-language question, with an AI-written insight alongside it."
       className="relative mx-auto w-full max-w-[36rem] lg:max-w-[33rem]"
     >
       {/*

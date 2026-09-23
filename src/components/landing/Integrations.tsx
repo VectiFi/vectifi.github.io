@@ -91,13 +91,16 @@ export function Integrations() {
             <li className="flex items-start gap-3">
               <Check className="mt-1.5 h-4 w-4 flex-shrink-0 vf-text-blue" aria-hidden />
               <span>
-                We build your data pipelines during onboarding: accounting, CRM,
-                HR, payments, and more.
+                We build your data pipelines during onboarding: accounting,
+                billing, CRM, HR, payments, and more.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="mt-1.5 h-4 w-4 flex-shrink-0 vf-text-blue" aria-hidden />
-              <span>We annotate the data and link your unique company context.</span>
+              <span>
+                We annotate the data and link your organization's unique context:
+                payer contracts, service lines, sites, and policies.
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="mt-1.5 h-4 w-4 flex-shrink-0 vf-text-blue" aria-hidden />

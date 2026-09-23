@@ -48,7 +48,7 @@ export function AppWindow() {
             <p className="px-2 text-[8px] font-semibold uppercase tracking-wide text-slate-400">
               Saved boards
             </p>
-            {['Revenue review', 'Pipeline health'].map((board) => (
+            {['Payer mix', 'Denials watch'].map((board) => (
               <div key={board} className="px-2 py-1.5 text-[10px] text-slate-400">
                 {board}
               </div>

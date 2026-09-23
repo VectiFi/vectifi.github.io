@@ -13,19 +13,22 @@ export function Hero() {
             wider than any half column can hold at its size. */}
         <p className="inline-flex items-center gap-2.5 rounded-full border border-[#7DC4A0]/40 bg-[#7DC4A0]/15 px-5 py-2 text-base font-semibold text-[#C9EEDD] shadow-[0_0_28px_rgba(125,196,160,0.35)] sm:gap-3 sm:px-6 sm:py-2.5 sm:text-lg">
           <Sparkles className="h-5 w-5 text-[#7DC4A0]" />
-          Turn raw data into decisions
+          Purpose-built for healthcare finance
         </p>
         <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5rem]">
-          AI-native <span className="vf-gradient-text-hero">Business Intelligence</span>
+          Agentic AI <span className="vf-gradient-text-hero">Financial Analyst</span>
+          <br />
+          for Healthcare
         </h1>
 
         <div className="mt-8 grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="max-w-xl lg:pt-16">
             <p className="max-w-lg text-xl leading-relaxed text-white/70">
-              VectiFi connects your business data, builds interactive dashboards,
-              and gives every decision maker an AI analyst on call. We act as your
-              data team as well, delivering the solution end to end.
-              No SQL, no spreadsheets, no waiting.
+              VectiFi connects your billing, payer, and operational data, builds
+              interactive dashboards, and gives every healthcare leader a
+              financial analyst on call. We act as your data team as well,
+              delivering the solution end to end. No SQL, no spreadsheets, no
+              waiting.
             </p>
             <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
               <Button

@@ -16,7 +16,7 @@ export function AskCard() {
         Ask AI
       </p>
       <p className="mt-1.5 text-[11px] leading-snug text-white">
-        Break revenue down by channel and show me what moved margin.
+        Break collections down by payer and show me what moved our collection rate.
       </p>
       <div className="mt-2.5 flex items-center gap-2 rounded-full bg-white/10 px-2.5 py-1.5">
         <span className="text-[9px] text-white/60">Ask a follow-up…</span>
@@ -37,8 +37,8 @@ export function InsightCard() {
         Insight
       </p>
       <p className="mt-1.5 text-[11px] leading-snug text-[#0B3D22]">
-        Partner mix grew 12 pts and carried most of the{' '}
-        <span className="font-semibold">+4.2 pt</span> margin gain.
+        Private-payer mix grew 12 pts and carried most of the{' '}
+        <span className="font-semibold">+4.2 pt</span> collection-rate gain.
       </p>
       <div className="mt-2 flex items-center gap-1.5 border-t border-slate-100 pt-2">
         <span className="h-1.5 w-1.5 rounded-full bg-[#1A8C62]" />

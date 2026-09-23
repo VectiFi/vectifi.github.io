@@ -8,7 +8,7 @@ const BULLETS = [
   'No tickets, no queue, no waiting on the data team',
 ];
 
-const QUESTION = '“What’s our retention rate by geo over the last 4 quarters?”';
+const QUESTION = '“What’s our net collection rate by payer over the last 4 quarters?”';
 
 // Character-by-character typing (the question wraps to two lines, so the
 // clip-path wipe used in DashboardFigure would reveal both lines at once).
@@ -44,15 +44,15 @@ const TICKET_META = [
 ];
 
 const QUEUE_BACKLOG = [
-  { id: 'REQ-1041', title: 'Churn breakdown by segment', filed: 'Filed 3 days ago' },
+  { id: 'REQ-1041', title: 'Denial breakdown by payer', filed: 'Filed 3 days ago' },
   { id: 'REQ-1037', title: 'Budget vs. actuals refresh', filed: 'Filed last week' },
 ];
 
 const ANSWER_ROWS = [
-  { label: 'North America', value: '94.2%', delta: '+1.2', up: true, width: '94%' },
-  { label: 'EMEA', value: '91.6%', delta: '+1.8', up: true, width: '87%' },
-  { label: 'APAC', value: '88.4%', delta: '−0.6', up: false, width: '79%' },
-  { label: 'LATAM', value: '85.1%', delta: '+0.4', up: true, width: '71%' },
+  { label: 'Medicare', value: '97.4%', delta: '+1.2', up: true, width: '94%' },
+  { label: 'Commercial', value: '95.8%', delta: '+1.8', up: true, width: '89%' },
+  { label: 'Medicaid', value: '91.2%', delta: '−0.6', up: false, width: '80%' },
+  { label: 'Self-pay', value: '68.5%', delta: '+0.4', up: true, width: '58%' },
 ];
 
 // Carries id="customers" for the footer's Customers link — it moved here when
@@ -82,9 +82,9 @@ export function Stats() {
               <span className="vf-gradient-text-light">instantly</span>.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Other decision makers file a data request and wait their turn. You ask
-              VectiFi's AI in chat and the answer comes back in seconds, complete with the
-              chart and the why.
+              Other healthcare finance teams file a data request and wait their turn.
+              You ask VectiFi's AI analyst in chat and the answer comes back in seconds,
+              complete with the chart and the why.
             </p>
             <ul className="mt-6 space-y-3">
               {BULLETS.map((bullet) => (
@@ -115,7 +115,7 @@ export function Stats() {
                   </span>
                 </div>
                 <p className="mt-2 text-base font-semibold text-slate-700">
-                  Retention rate by geo, last 4 quarters
+                  Net collection rate by payer, last 4 quarters
                 </p>
                 <dl className="mt-3 space-y-1.5 border-t border-slate-100 pt-3">
                   {TICKET_META.map((row) => (
@@ -207,8 +207,8 @@ export function Stats() {
                 className="mt-4 border-t border-slate-100 pt-3 text-xs leading-relaxed text-slate-600 transition-opacity duration-700 motion-reduce:transition-none"
                 style={{ opacity: answerInView ? 1 : 0, ...anim(2950) }}
               >
-                EMEA is up <span className="font-semibold">1.8 pts</span> since the Q1 pricing
-                change; APAC is the only region trending down.
+                Commercial is up <span className="font-semibold">1.8 pts</span> since the Q1
+                contract renegotiation; Medicaid is the only payer trending down.
               </p>
               <div
                 className="mt-3 flex items-center gap-1.5 transition-opacity duration-700 motion-reduce:transition-none"

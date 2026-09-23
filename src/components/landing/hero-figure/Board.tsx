@@ -1,24 +1,24 @@
 import { Sparkline } from './Sparkline';
 
 const STATS = [
-  { label: 'Revenue', value: '$5.5M', delta: '+12.4%', spark: [8, 11, 9, 14, 13, 18, 22] },
-  { label: 'Gross margin', value: '61.2%', delta: '+4.2 pts', spark: [10, 9, 12, 11, 15, 16, 19] },
-  { label: 'Net retention', value: '118%', delta: '+6 pts', spark: [12, 13, 12, 15, 17, 16, 20] },
+  { label: 'Net revenue', value: '$5.5M', delta: '+12.4%', spark: [8, 11, 9, 14, 13, 18, 22] },
+  { label: 'Collection rate', value: '96.2%', delta: '+4.2 pts', spark: [10, 9, 12, 11, 15, 16, 19] },
+  { label: 'Days in A/R', value: '41', delta: '−6 days', spark: [12, 13, 12, 15, 17, 16, 20] },
 ];
 
 /**
  * Single series, single hue — the card title names it, so no legend. `value` is
  * the bar height as a percentage; `display` is the direct label, kept on the
  * datum so it can never drift onto the wrong bar. The six scale to the $5.5M
- * Revenue tile above.
+ * Net revenue tile above.
  */
 const CHANNELS = [
-  { label: 'Direct', value: 58, display: '$0.9M' },
-  { label: 'Partner', value: 92, display: '$1.4M' },
-  { label: 'Self-serve', value: 46, display: '$0.7M' },
-  { label: 'Marketplace', value: 71, display: '$1.1M' },
-  { label: 'Field', value: 39, display: '$0.6M' },
-  { label: 'Referral', value: 54, display: '$0.8M' },
+  { label: 'Medicare', value: 71, display: '$1.1M' },
+  { label: 'Private', value: 92, display: '$1.4M' },
+  { label: 'Medicaid', value: 54, display: '$0.8M' },
+  { label: 'Self-pay', value: 39, display: '$0.6M' },
+  { label: 'TRICARE', value: 46, display: '$0.7M' },
+  { label: 'Other', value: 58, display: '$0.9M' },
 ];
 
 const PEAK = CHANNELS.reduce((a, b) => (b.value > a.value ? b : a));
@@ -27,7 +27,7 @@ export function Board() {
   return (
     <div className="min-w-0 flex-1 space-y-3 bg-slate-50/40 p-3.5 sm:p-4">
       <div className="flex items-baseline justify-between">
-        <p className="text-[13px] font-semibold text-[#0B3D22]">Revenue review</p>
+        <p className="text-[13px] font-semibold text-[#0B3D22]">Revenue cycle review</p>
         <p className="text-[9px] text-slate-400">Updated 2m ago</p>
       </div>
 
@@ -47,7 +47,7 @@ export function Board() {
       </div>
 
       <div className="rounded-xl bg-white p-3 ring-1 ring-slate-900/5">
-        <p className="text-[10px] font-semibold text-[#0B3D22]">Revenue by channel</p>
+        <p className="text-[10px] font-semibold text-[#0B3D22]">Collections by payer</p>
         <p className="text-[9px] text-slate-400">Last 6 months</p>
 
         <div className="relative mt-3 h-[104px]">

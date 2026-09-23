@@ -6,8 +6,8 @@ import { Logo } from '../Logo';
 const CONTACT_EMAIL = 'sysadmin@vectifi.com';
 
 const HIGHLIGHTS = [
-  { icon: Zap, label: 'Live in minutes', detail: 'Connect a source and see your first dashboard today.' },
-  { icon: BarChart3, label: 'Built for finance and operations', detail: 'Purpose-built for BI, reporting, finance, and operations workflows.' },
+  { icon: Zap, label: 'Live in days, not quarters', detail: 'Our team connects your systems during onboarding; you see your first dashboard the same week.' },
+  { icon: BarChart3, label: 'Built for healthcare finance', detail: 'Purpose-built for revenue cycle, payer analysis, and operational reporting.' },
   { icon: ShieldCheck, label: 'Secure by design', detail: 'Encryption in transit and at rest, SOC 2 aligned.' },
 ];
 
@@ -21,8 +21,8 @@ export function CTA() {
               Ready to see VectiFi in action?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Join the beta and be among the first teams to turn raw data into
-              interactive dashboards and AI-assisted insights.
+              Join the beta and be among the first healthcare finance teams with
+              an agentic AI analyst working across your data.
             </p>
             <ul className="mt-8 space-y-5">
               {HIGHLIGHTS.map(({ icon: Icon, label, detail }) => (

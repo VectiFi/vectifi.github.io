@@ -2,24 +2,24 @@ import { ArrowUp, Sparkles } from 'lucide-react';
 import { useInView } from './useInView';
 
 const KPIS = [
-  { label: 'Revenue', value: '$4.2M', delta: '+8.1% QoQ' },
-  { label: 'Retention', value: '91.6%', delta: '+1.2 pts' },
-  { label: 'NRR', value: '108%', delta: '+2.0 pts' },
+  { label: 'Net revenue', value: '$4.2M', delta: '+8.1% QoQ' },
+  { label: 'Collection rate', value: '95.8%', delta: '+1.2 pts' },
+  { label: 'Denial rate', value: '7.4%', delta: '−1.1 pts' },
 ];
 
 const REGION_BARS = [
-  { label: 'NA', value: '$1.8M', height: '100%' },
-  { label: 'EMEA', value: '$1.2M', height: '72%' },
-  { label: 'APAC', value: '$0.8M', height: '48%' },
-  { label: 'LATAM', value: '$0.4M', height: '28%' },
+  { label: 'Surgery', value: '$1.8M', height: '100%' },
+  { label: 'Imaging', value: '$1.2M', height: '72%' },
+  { label: 'ER', value: '$0.8M', height: '48%' },
+  { label: 'Clinics', value: '$0.4M', height: '28%' },
 ];
 
 // Mirrors the ticket-queue section's answer card so the page tells one story.
 const REGION_ROWS = [
-  { region: 'North America', revenue: '$1.8M', retention: '94.2%', delta: '+1.2', up: true },
-  { region: 'EMEA', revenue: '$1.2M', retention: '91.6%', delta: '+1.8', up: true },
-  { region: 'APAC', revenue: '$0.8M', retention: '88.4%', delta: '−0.6', up: false },
-  { region: 'LATAM', revenue: '$0.4M', retention: '85.1%', delta: '+0.4', up: true },
+  { region: 'Medicare', revenue: '$1.6M', retention: '97.4%', delta: '+1.2', up: true },
+  { region: 'Commercial', revenue: '$1.4M', retention: '95.8%', delta: '+1.8', up: true },
+  { region: 'Medicaid', revenue: '$0.8M', retention: '91.2%', delta: '−0.6', up: false },
+  { region: 'Self-pay', revenue: '$0.4M', retention: '68.5%', delta: '+0.4', up: true },
 ];
 
 const TREND_POINTS: Array<[number, number]> = [
@@ -59,7 +59,7 @@ export function DashboardFigure() {
     <div
       ref={figureRef}
       role="img"
-      aria-label="Illustration of the VectiFi dashboard builder: a typed request for revenue by region, monthly trend, and retention, and the finished dashboard it produced with KPI tiles, charts, and a region table. All figures are invented."
+      aria-label="Illustration of the VectiFi dashboard builder: a typed request for collections by service line, monthly trend, and payer performance, and the finished dashboard it produced with KPI tiles, charts, and a payer table. All figures are invented."
       className="flex flex-col gap-3.5 rounded-2xl border border-border/60 bg-white p-5 shadow-xl shadow-green-900/10 sm:p-6"
     >
       <div className="flex items-center gap-2.5 rounded-xl border border-[#1A8C62]/30 bg-white px-3.5 py-2.5 shadow-sm">
@@ -72,7 +72,7 @@ export function DashboardFigure() {
             ...anim(0),
           }}
         >
-          Show revenue by region, monthly trend, and retention
+          Show collections by service line, trend, and payer rates
         </span>
         <span
           className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A8C62] transition-[opacity,transform] duration-300 motion-reduce:transition-none"
@@ -94,7 +94,7 @@ export function DashboardFigure() {
           Last 12 months
         </span>
         <span className="rounded-full border border-border/60 bg-slate-50 px-2.5 py-0.5 text-[11px] font-medium text-slate-500">
-          All regions
+          All payers
         </span>
         <span className="ml-auto flex items-center gap-1.5 text-[11px] font-medium text-slate-500">
           <span className="h-1.5 w-1.5 rounded-full bg-[#1A8C62]" />
@@ -129,7 +129,7 @@ export function DashboardFigure() {
             ...anim(1650),
           }}
         >
-          <p className="text-xs text-slate-500">Revenue by region</p>
+          <p className="text-xs text-slate-500">Collections by service line</p>
           <div className="mt-3 flex min-h-24 flex-1 items-end justify-around gap-2">
             {REGION_BARS.map((bar, i) => (
               <div key={bar.label} className="flex h-full w-full max-w-9 flex-col justify-end gap-1">
@@ -213,9 +213,9 @@ export function DashboardFigure() {
         }}
       >
         <div className="grid grid-cols-[1.4fr_1fr_1fr_0.7fr] gap-2 border-b border-border/60 pb-1.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
-          <span>Region</span>
-          <span className="text-right">Revenue</span>
-          <span className="text-right">Retention</span>
+          <span>Payer</span>
+          <span className="text-right">Collections</span>
+          <span className="text-right">Coll. rate</span>
           <span className="text-right">QoQ</span>
         </div>
         <div className="mt-1.5 space-y-1.5">
