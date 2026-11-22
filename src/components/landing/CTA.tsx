@@ -21,8 +21,8 @@ export function CTA() {
               Ready to see VectiFi in action?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Join the beta and be among the first healthcare finance teams with
-              an agentic AI analyst working across your data.
+              Tell us where to reach you and we'll schedule a walkthrough for
+              your team. From there, our team handles onboarding end to end.
             </p>
             <ul className="mt-8 space-y-5">
               {HIGHLIGHTS.map(({ icon: Icon, label, detail }) => (
@@ -42,7 +42,7 @@ export function CTA() {
           <Card className="border-border/60 p-6 shadow-xl shadow-green-900/10 sm:p-8">
             <div className="mb-4 flex items-center justify-center gap-3">
               <Logo variant="icon" className="h-10 w-10" />
-              <h3 className="text-xl font-bold vf-text-navy">Request beta access</h3>
+              <h3 className="text-xl font-bold vf-text-navy">Request a demo</h3>
             </div>
             <EmailForm />
 

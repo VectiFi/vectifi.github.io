@@ -89,7 +89,7 @@ export function EmailForm() {
       <div className="flex flex-col items-center gap-3 sm:gap-4 p-4 sm:p-6">
         <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-green-500" />
         <p className="text-center vf-text-navy text-sm sm:text-base px-2">
-          Thank you for your interest! We'll be in touch soon.
+          Thanks! We'll reach out shortly to schedule your demo.
         </p>
       </div>
     );
@@ -115,7 +115,7 @@ export function EmailForm() {
         className="vf-cta-gradient h-11 w-full whitespace-nowrap text-sm text-white sm:text-base"
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'Submitting...' : 'Request beta access'}
+        {isSubmitting ? 'Submitting...' : 'Request a demo'}
       </Button>
       {error && (
         <p className="text-center px-2 text-destructive" style={{ fontSize: '0.8rem' }}>{error}</p>
