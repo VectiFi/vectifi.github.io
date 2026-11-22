@@ -5,8 +5,10 @@ const FOOTER_COLUMNS = [
   {
     title: 'Product',
     links: [
-      { label: 'Dashboards', href: '#top' },
-      { label: 'AI Insights', href: '#top' },
+      { label: 'Dashboards', href: '#features' },
+      { label: 'AI Insights', href: '#insights' },
+      { label: 'Planning', href: '#planning' },
+      { label: 'Watchlist', href: '#watchlist' },
       { label: 'Integrations', href: '#integrations' },
       { label: 'Pricing', href: '#top' },
     ],

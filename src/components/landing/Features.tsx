@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import { Check } from 'lucide-react';
 import { DashboardFigure } from './DashboardFigure';
 import { ReportFigure } from './ReportFigure';
+import { PlanningFigure } from './PlanningFigure';
+import { WatchlistFigure } from './WatchlistFigure';
 
 interface FeatureProps {
   eyebrow: string;
@@ -95,6 +97,59 @@ export function InsightsFeature() {
             'Narrated explanations you can drop into any board pack',
           ]}
           figure={<ReportFigure />}
+        />
+      </div>
+    </section>
+  );
+}
+
+/** Section 4: Planning. Modeling lives inside it: forecasts built from pulled actuals, variance explained at close. */
+export function PlanningFeature() {
+  return (
+    <section id="planning" className="vf-section bg-white py-20 md:py-28">
+      <div className="container mx-auto px-4 sm:px-6">
+        <Feature
+          eyebrow="Planning"
+          title={
+            <>
+              Forecasts that build themselves.{' '}
+              <span className="vf-gradient-text-light">Variance that explains itself.</span>
+            </>
+          }
+          description="Describe the forecast you want in plain English. VectiFi pulls the actuals from your connected data, builds the model, and keeps it current as new data lands. When each period closes, the AI analyst writes the variance commentary for you: what moved, by how much, and why."
+          bullets={[
+            'Actuals pulled automatically from billing, payer, and operational data',
+            'Describe a forecast by payer, service line, or site in plain English',
+            'Variance commentary written each close, ready for the board pack',
+          ]}
+          figure={<PlanningFigure />}
+        />
+      </div>
+    </section>
+  );
+}
+
+/** Section 5: Watchlist. Alerts and digests from a sentence; the agent emails the recipient when one fires. */
+export function WatchlistFeature() {
+  return (
+    <section id="watchlist" className="vf-section vf-wash py-20 md:py-28">
+      <div className="container mx-auto px-4 sm:px-6">
+        <Feature
+          reverse
+          eyebrow="Watchlist"
+          title={
+            <>
+              Tell it what to watch.{' '}
+              <span className="vf-gradient-text-light">It tells you first.</span>
+            </>
+          }
+          description="Describe what you want watched in plain English, who should hear about it, and how often. VectiFi's agent turns the sentence into a rule, checks it against fresh data every day, and emails the right person the moment it fires, with the matching records in the message. Weekly digests work the same way."
+          bullets={[
+            'Alerts and digests written in a sentence, no rule builder',
+            'The agent emails the recipient when it fires, records included',
+            'Churn, denials, A/R aging, cash: if you can describe it, it can watch it',
+          ]}
+          figure={<WatchlistFigure />}
         />
       </div>
     </section>
