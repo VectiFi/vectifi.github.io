@@ -1,7 +1,8 @@
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { Check } from 'lucide-react';
 
-// Sourced from Merge.dev unified API categories: Accounting and CRM.
+// Accounting and CRM follow Merge.dev's unified API categories; billing and
+// payments are VectiFi's direct lanes.
 const ACCOUNTING = [
   'QuickBooks Online',
   'Xero',
@@ -24,6 +25,8 @@ const CRM = [
   'Capsule',
 ];
 
+const BILLING_PAYMENTS = ['BILL.com', 'Chargebee'];
+
 const CONNECTOR_LOGOS: Record<string, string> = {
   'QuickBooks Online': '/connectors/quickbooks.png',
   Xero: '/connectors/xero.png',
@@ -41,6 +44,8 @@ const CONNECTOR_LOGOS: Record<string, string> = {
   Insightly: '/connectors/insightly.png',
   Affinity: '/connectors/affinity.png',
   Capsule: '/connectors/capsulecrm.png',
+  'BILL.com': '/connectors/bill.png',
+  Chargebee: '/connectors/chargebee.png',
 };
 
 function connectorLogoPath(name: string) {
@@ -110,15 +115,12 @@ export function Integrations() {
               </span>
             </li>
           </ul>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Easy from day one: nothing to build, nothing to babysit, minimal data
-            maintenance cost on your team.
-          </p>
         </div>
 
         <div className="mt-16 space-y-12">
           <IntegrationGroup title="Accounting" items={ACCOUNTING} />
           <IntegrationGroup title="CRM" items={CRM} />
+          <IntegrationGroup title="Billing & payments" items={BILLING_PAYMENTS} />
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground">

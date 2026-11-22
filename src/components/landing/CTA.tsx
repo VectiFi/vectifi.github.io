@@ -8,7 +8,7 @@ const CONTACT_EMAIL = 'sysadmin@vectifi.com';
 const HIGHLIGHTS = [
   { icon: Zap, label: 'Live in days, not quarters', detail: 'Our team connects your systems during onboarding; you see your first dashboard the same week.' },
   { icon: BarChart3, label: 'Built for healthcare finance', detail: 'Purpose-built for revenue cycle, payer analysis, and operational reporting.' },
-  { icon: ShieldCheck, label: 'Secure by design', detail: 'Encryption in transit and at rest, SOC 2 aligned.' },
+  { icon: ShieldCheck, label: 'Secure by design', detail: 'Encryption in transit and at rest, with access scoped to your organization.' },
 ];
 
 export function CTA() {
